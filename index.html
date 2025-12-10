@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Progressive Web Apps (PWA) and Web Manifest - Get started with PWA development">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Web Manifest Link -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple Touch Icon for iOS -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icons/icon-96.png">
+    
+    <title>PWA Get Started - Web Manifest Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="pwa-logo">
+                    <span class="logo-icon">📱</span>
+                </div>
+            </div>
+            <h1 class="hero-title">Progressive Web Apps</h1>
+            <p class="hero-subtitle">Get Started with Web Manifest</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" id="installBtn" style="display: none;">
+                    <span class="btn-icon">⬇️</span>
+                    Install App
+                </button>
+                <a href="#features" class="btn btn-secondary">
+                    <span class="btn-icon">🚀</span>
+                    Explore Features
+                </a>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- What is PWA Section -->
+    <section class="section section-light" id="what-is-pwa">
+        <div class="container">
+            <h2 class="section-title">What is a PWA?</h2>
+            <p class="section-description">
+                Progressive Web Apps combine the best of web and native apps. They're built using standard web technologies but provide a native app-like experience.
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title">Web-Based</h3>
+                    <p class="card-text">Built with HTML, CSS, and JavaScript - runs in any modern browser</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📲</div>
+                    <h3 class="card-title">Installable</h3>
+                    <p class="card-text">Users can add it to their home screen without app stores</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Fast & Reliable</h3>
+                    <p class="card-text">Works offline and loads instantly with service workers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Manifest Section -->
+    <section class="section section-dark" id="features">
+        <div class="container">
+            <h2 class="section-title">Web Manifest Explained</h2>
+            <p class="section-description">
+                The Web Manifest is a JSON file that tells the browser about your app and how it should behave when installed.
+            </p>
+            
+            <div class="manifest-demo">
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">manifest.json</span>
+                    </div>
+                    <pre class="code-block"><code id="manifestCode">{
+  "name": "PWA Get Started",
+  "short_name": "PWA Demo",
+  "description": "Learn about Progressive Web Apps",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}</code></pre>
+                </div>
+                
+                <div class="manifest-properties">
+                    <div class="property" data-property="name">
+                        <div class="property-header">
+                            <span class="property-icon">📝</span>
+                            <h4>name</h4>
+                        </div>
+                        <p>Full name shown in app launcher and splash screen</p>
+                    </div>
+                    <div class="property" data-property="short_name">
+                        <div class="property-header">
+                            <span class="property-icon">🏷️</span>
+                            <h4>short_name</h4>
+                        </div>
+                        <p>Shorter name used when space is limited (home screen)</p>
+                    </div>
+                    <div class="property" data-property="display">
+                        <div class="property-header">
+                            <span class="property-icon">🖥️</span>
+                            <h4>display</h4>
+                        </div>
+                        <p>How the app appears: standalone, fullscreen, minimal-ui, or browser</p>
+                    </div>
+                    <div class="property" data-property="icons">
+                        <div class="property-header">
+                            <span class="property-icon">🎨</span>
+                            <h4>icons</h4>
+                        </div>
+                        <p>Array of icon objects for different sizes and purposes</p>
+                    </div>
+                    <div class="property" data-property="theme_color">
+                        <div class="property-header">
+                            <span class="property-icon">🌈</span>
+                            <h4>theme_color</h4>
+                        </div>
+                        <p>Color of the browser toolbar and task switcher</p>
+                    </div>
+                    <div class="property" data-property="start_url">
+                        <div class="property-header">
+                            <span class="property-icon">🔗</span>
+                            <h4>start_url</h4>
+                        </div>
+                        <p>URL that loads when the app is launched</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Worker Section -->
+    <section class="section section-light" id="service-worker">
+        <div class="container">
+            <h2 class="section-title">Service Worker</h2>
+            <p class="section-description">
+                Service Workers enable offline functionality and background sync. They act as a proxy between your app and the network.
+            </p>
+            
+            <div class="sw-status-card">
+                <div class="sw-icon" id="swIcon">⏳</div>
+                <h3 id="swTitle">Checking Service Worker...</h3>
+                <p id="swStatus">Please wait while we check the service worker status</p>
+                <div class="sw-details" id="swDetails"></div>
+            </div>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">📴</div>
+                    <div class="feature-content">
+                        <h4>Offline Support</h4>
+                        <p>Cache resources and serve them when offline</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h4>Background Sync</h4>
+                        <p>Sync data when connection is restored</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔔</div>
+                    <div class="feature-content">
+                        <h4>Push Notifications</h4>
+                        <p>Receive notifications even when app is closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PWA Checklist Section -->
+    <section class="section section-gradient" id="checklist">
+        <div class="container">
+            <h2 class="section-title">PWA Checklist</h2>
+            <p class="section-description">
+                Essential requirements to make your web app a proper PWA
+            </p>
+            
+            <div class="checklist-grid">
+                <div class="checklist-item" id="check-https">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>HTTPS</h4>
+                        <p>Served over secure connection</p>
+                    </div>
+                </div>
+                <div class="checklist-item" id="check-manifest">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>Web Manifest</h4>
+                        <p>Valid manifest.json linked</p>
+                    </div>
+                </div>
+                <div class="checklist-item" id="check-sw">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>Service Worker</h4>
+                        <p>Registered and active</p>
+                    </div>
+                </div>
+                <div class="checklist-item" id="check-icons">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>App Icons</h4>
+                        <p>192px and 512px icons</p>
+                    </div>
+                </div>
+                <div class="checklist-item" id="check-viewport">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>Responsive</h4>
+                        <p>Viewport meta tag set</p>
+                    </div>
+                </div>
+                <div class="checklist-item" id="check-offline">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>Works Offline</h4>
+                        <p>Content cached for offline use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try It Section -->
+    <section class="section section-light" id="try-it">
+        <div class="container">
+            <h2 class="section-title">Try It Yourself!</h2>
+            <p class="section-description">
+                This demo is a fully functional PWA. Try these actions:
+            </p>
+            
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">📱</div>
+                    <h3>Install the App</h3>
+                    <p>Look for the install prompt or use your browser's menu to add to home screen</p>
+                    <button class="btn btn-small" id="installBtnAction" style="display: none;">Install Now</button>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📴</div>
+                    <h3>Go Offline</h3>
+                    <p>Turn off your internet and refresh - the app still works!</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">🔍</div>
+                    <h3>Inspect Manifest</h3>
+                    <p>Open DevTools → Application → Manifest to see the details</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">⚙️</div>
+                    <h3>View Service Worker</h3>
+                    <p>Go to DevTools → Application → Service Workers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">📱</span>
+                    <span>PWA Demo</span>
+                </div>
+                <p class="footer-text">
+                    Built with ❤️ using Vanilla JavaScript
+                </p>
+                <div class="footer-links">
+                    <a href="https://web.dev/progressive-web-apps/" target="_blank" rel="noopener">Learn More at web.dev</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank" rel="noopener">MDN Web Docs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Offline Notification -->
+    <div class="offline-toast" id="offlineToast">
+        <span class="offline-icon">📴</span>
+        <span>You're offline - content served from cache</span>
+    </div>
+
+    <!-- Online Notification -->
+    <div class="online-toast" id="onlineToast">
+        <span class="online-icon">🌐</span>
+        <span>You're back online!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+</code>
