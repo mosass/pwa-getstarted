@@ -14,7 +14,7 @@ async function registerServiceWorker() {
 
     if ('serviceWorker' in navigator) {
         try {
-            const registration = await navigator.serviceWorker.register('./sw.js', {
+            const registration = await navigator.serviceWorker.register('./sw-workbox.js', {
                 scope: './'
             });
 
@@ -293,4 +293,3 @@ if (process?.env?.NODE_ENV === 'development' || location.hostname === 'localhost
         console.log('Notifications supported:', 'Notification' in window);
     });
 }
-</code>
