@@ -1,0 +1,21 @@
+{
+  "name": "pwa-getstarted",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "build": "echo \"Building...\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosass/pwa-getstarted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mosass/pwa-getstarted/issues"
+  },
+  "homepage": "https://github.com/mosass/pwa-getstarted#readme"
+}
